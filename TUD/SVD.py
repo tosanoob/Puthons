@@ -1,10 +1,10 @@
 import numpy as np
 
-# A = np.array([
-#     [5,5,0,1],
-#     [4,5,0,0],
-#     [1,0,5,4]
-# ])
+A = np.array([
+    [1,3,5],
+    [3,9,11],
+    [5,11,17]
+])
 
 # A = np.array([
 #         [1,-0.8],
@@ -13,15 +13,26 @@ import numpy as np
 # ])
 
 # khởi tạo ma trận input
-A = np.zeros((10,10))
-A[0,0] = 1
-A[0,1] = 2
-A[9,8] = 2
-A[9,9] = 5
-for i in range(1,9):
-    A[i,i-1] = 2
-    A[i,i] = 5
-    A[i,i+1] = 2
+# A = np.zeros((10,10))
+# A[0,0] = 1
+# A[0,1] = 2
+# A[9,8] = 2
+# A[9,9] = 5
+# for i in range(1,9):
+#     A[i,i-1] = 2
+#     A[i,i] = 5
+#     A[i,i+1] = 2
+
+def round_to_5_digits(x):
+    formatted = format(x,".5f")
+    return float(formatted)
+
+def format_matrix(X):
+    X_copy = np.zeros(X.shape)
+    for i in range(X.shape[0]):
+        for j in range(X.shape[1]):
+            X_copy[i,j] = round_to_5_digits(X[i,j])
+    return X_copy
 
 def eigenvector(n, B, inp): # hàm tính vector riêng theo phương pháp Danilevski
     res = []
@@ -98,11 +109,11 @@ U = np.transpose(U)
 
 check = U@D@np.transpose(V)
 print("--U-------------------------")
-print(U)
+print(format_matrix(U))
 print("--D-------------------------")
-print(D)
-print("--V-------------------------")
-print(np.transpose(V))
+print(format_matrix(D))
+print("--VT-------------------------")
+print(format_matrix(V))
 # print(check)
 # print(np.allclose(A,check))
 

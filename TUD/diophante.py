@@ -21,6 +21,6 @@ if c%d==0:
     print(int(x))
     print(int(y))
 else:
-    print("phuong trinh vo nghiem nguyen")
+    print("Phuong trinh vo nghiem nguyen")
 
 

@@ -1,5 +1,22 @@
 import numpy as np
 
+def round_digits(x):
+    formatted = format(x,".2f")
+    return float(formatted)
+
+def format_matrix(X):
+    X_copy = np.zeros(X.shape)
+    for i in range(X.shape[0]):
+        for j in range(X.shape[1]):
+            X_copy[i,j] = round_digits(X[i,j])
+    return X_copy
+
+def format_vector(X):
+    X_copy = []
+    for x in X:
+        X_copy.append(round_digits(x))
+    return np.array(X_copy)
+
 input = np.array([
     [2,1,0],
     [1,3,1],
@@ -44,8 +61,8 @@ for k in range(n-2,-1,-1):
     A = np.matmul(np.matmul(M_1,A),M)
     B = np.matmul(B,M)
 
-print("Ma trận sau biến đổi Danilevsky")
-print(A)
+# print("Ma trận sau biến đổi Danilevsky")
+# print(A)
 
 print("Giải phương trình tìm trị riêng:")
 
@@ -90,6 +107,6 @@ for i in range (0,n):
 eigvect = np.array(eigvect)
 print('Ma trận vector riêng M')
 eigvect = np.transpose(eigvect)
-print(eigvect)
+print(format_matrix(eigvect))
 print('Ma trận M^-1')
-print(np.linalg.inv(eigvect))
+print(format_matrix(np.linalg.inv(eigvect)))
