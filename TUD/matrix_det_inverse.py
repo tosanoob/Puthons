@@ -1,9 +1,9 @@
 import numpy as np
 
 inp = np.array([
-    [1,3,2],
-    [1,4,6],
-    [2,3,7]
+    [1,1,4],
+    [2,3,5],
+    [3,4,6]
 ])
 
 def det(a):

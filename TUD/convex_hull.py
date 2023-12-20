@@ -65,14 +65,13 @@ def convex_hull(p): #input: một tập điểm
                 
     return np.array(Lupper), np.array(Llower) # Trả về Lupper và Llower
 
-N = 7 # số điểm cần tính bao
+N = 20 # số điểm cần tính bao
+x = np.random.rand(N)*10
+y = np.random.rand(N)*10
 
-# x = np.random.rand(N)*10
-# y = np.random.rand(N)*10
 
-
-x = np.array([1,2,3,5,7,8,9]) 
-y = np.array([7,6,2,8,5,1,8])
+# x = np.array([1,2,3,5,7,8,9]) 
+# y = np.array([7,6,2,8,5,1,8])
 p = np.array([x,y])
 p = np.transpose(p)
 

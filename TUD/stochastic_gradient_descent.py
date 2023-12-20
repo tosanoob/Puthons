@@ -60,7 +60,7 @@ bgd_thetas, losses = stochastic_gradient_descent()
 
 # in loss cho 500 sample đầu
 x_axis = list(range(500))
-plt.plot(x_axis, losses[:500], color="r")
+plt.plot(x_axis, losses[:500], "r-")
 plt.show()
 
 # print theta

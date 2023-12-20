@@ -20,7 +20,7 @@ X_b = np.c_[np.ones((N, 1)), X]
 
 def mini_batch_gradient_descent():
     epoch_max = 50
-    minibatch_size = 20
+    minibatch_size = 50
     learning_rate = 0.01
     momentum = 0.5
     learning_speed = 0
@@ -40,7 +40,7 @@ def mini_batch_gradient_descent():
             yi = y_shuffled[i:i + minibatch_size]
 
             # predict y_hat
-            y_hat = xi.dot(thetas + learning_speed*momentum)
+            y_hat = xi.dot(thetas + learning_speed*momentum) #predict of NAG
 
             # compute loss
             loss = (y_hat - yi) ** 2
